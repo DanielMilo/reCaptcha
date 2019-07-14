@@ -4,21 +4,25 @@ using UnityEngine;
 
 public class PlayerBehaviourScript : MonoBehaviour
 {
+    private Vector2 movement;
+
     [SerializeField]
-    public Vector2 movement { get; set; }
+    private float speed;
     [SerializeField]
-    public float speed { get; set; }
+    private float standingSpeed;
     [SerializeField]
-    public float jumpSpeed { get; set; }
+    private float crawlingSpeed;
     [SerializeField]
-    public bool isOnGround { get; set; }
+    private float jumpSpeed;
     [SerializeField]
-    public float noiseRange { get; set; }
+    private bool isOnGround;
+
+    public bool isSneaking;
 
     // Start is called before the first frame update
     void Start()
     {
-
+        this.speed = this.standingSpeed;
     }
 
     // Update is called once per frame
@@ -33,19 +37,33 @@ public class PlayerBehaviourScript : MonoBehaviour
         this.transform.position += new Vector3(deltaPosition.x, deltaPosition.y, 0);
     }
 
+    void Jump()
+    {
+        Stand();
+        this.movement.y = jumpSpeed;
+    }
+
+    void Stand()
+    {
+        this.speed = this.standingSpeed;
+    }
+
+    void Crawl()
+    {
+        this.speed = this.crawlingSpeed;
+    }
+
     void HandleInput()
     {
-        var movement = this.movement;
-        movement.x = Input.GetAxis("horizontal") * speed;
+        movement = Vector2.zero;
+        this.movement.x = Input.GetAxis("Horizontal") * speed;
 
         if (isOnGround)
         {
             if (Input.GetKeyDown(KeyCode.Space))
             {
-                movement.y = jumpSpeed;
+                Jump();
             }
         }
-
-        this.movement = movement;
     }
 }
