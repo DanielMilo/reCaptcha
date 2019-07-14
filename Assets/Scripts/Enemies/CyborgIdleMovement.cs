@@ -6,6 +6,6 @@ public class CyborgIdleMovement : AIMovement
 {
     public override void ExecuteMove(EnemyBehaviour me)
     {
-        // wander
+        // 
     }
 }

@@ -4,20 +4,20 @@ using UnityEngine;
 
 public class PlayerBehaviourScript : MonoBehaviour
 {
+    private Vector2 movement;
+
     [SerializeField]
-    public Vector2 movement;
+    private float speed;
     [SerializeField]
-    private float speed { get; set; }
+    private float standingSpeed;
     [SerializeField]
-    public float standingSpeed { get; set; }
+    private float crawlingSpeed;
     [SerializeField]
-    public float crawlingSpeed { get; set; }
+    private float jumpSpeed;
     [SerializeField]
-    public float jumpSpeed { get; set; }
-    [SerializeField]
-    public bool isOnGround { get; set; }
-    [SerializeField]
-    public float noiseRange { get; set; }
+    private bool isOnGround;
+
+    public bool isSneaking;
 
     // Start is called before the first frame update
     void Start()
@@ -55,7 +55,8 @@ public class PlayerBehaviourScript : MonoBehaviour
 
     void HandleInput()
     {
-        this.movement.x = Input.GetAxis("horizontal") * speed;
+        movement = Vector2.zero;
+        this.movement.x = Input.GetAxis("Horizontal") * speed;
 
         if (isOnGround)
         {
