@@ -57,12 +57,14 @@ public class EnemyBehaviour : MonoBehaviour
         else if (doesHearPlayer)
         {
             // Move to position
-            awareMovement.ExecuteMove(this);
+            if(awareMovement!=null)
+                awareMovement.ExecuteMove(this);
         }
         else
         {
             // Idle
-            idleMovement.ExecuteMove(this);
+            if (awareMovement != null)
+                idleMovement.ExecuteMove(this);
         }
     }
 }
