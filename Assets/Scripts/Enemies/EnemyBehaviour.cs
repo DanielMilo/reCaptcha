@@ -12,6 +12,10 @@ public class EnemyBehaviour : MonoBehaviour
     private float SightRange;
     [SerializeField]
     private AttackTemplate attack;
+    [SerializeField]
+    private AIMovement idleMovement;
+    [SerializeField]
+    private AIMovement awareMovement;
 
     private GameObject Player;
 
@@ -53,10 +57,12 @@ public class EnemyBehaviour : MonoBehaviour
         else if (doesHearPlayer)
         {
             // Move to position
+            awareMovement.ExecuteMove(this);
         }
         else
         {
             // Idle
+            idleMovement.ExecuteMove(this);
         }
     }
 }
