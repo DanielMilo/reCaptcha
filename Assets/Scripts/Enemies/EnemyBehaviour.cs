@@ -10,6 +10,8 @@ public class EnemyBehaviour : MonoBehaviour
     private float SilentRange;
     [SerializeField]
     private float SightRange;
+    [SerializeField]
+    private AttackTemplate attack;
 
     private GameObject Player;
 
@@ -27,25 +29,30 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        bool doesNoticePlayer = false;
+        bool doesSeePlayer = false;
+        bool doesHearPlayer = false;
 
         // Check
         float dist = Vector3.Distance(Player.transform.position, transform.position);
 
         //Can see \ hear player
-        if (dist < SightRange || (Player.isLoud && dist < LoudRange) || (Player.isSilent && dist < SilentRange))
+        /*if (dist < SightRange || (Player.isLoud && dist < LoudRange) || (Player.isSilent && dist < SilentRange))
         {
             doesNoticePlayer = true;
         }
         else
         {
             doesNoticePlayer = false;
-        }
+        }*/
 
-
-        if (doesNoticePlayer)
+        if (doesSeePlayer)
         {
             // Attack
+            attack.PerformAttack(Player.transform.position);
+        }
+        else if (doesHearPlayer)
+        {
+            // Move to position
         }
         else
         {
