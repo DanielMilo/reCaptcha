@@ -8,6 +8,7 @@ public class CharacterBehaviour : MonoBehaviour
     private float movement;
     private CharacterController controller;
     private bool jump = false;
+    private bool crouch = false;
 
     [SerializeField] float WalkingSpeed = 5;
 
@@ -27,12 +28,18 @@ public class CharacterBehaviour : MonoBehaviour
         {
             jump = true;
         }
+
+        if (Input.GetAxis("Vertical") < 0)
+        {
+            crouch = true;
+        }
     }
 
     private void FixedUpdate()
     {
-        controller.Move(movement, false, jump);
+        controller.Move(movement, crouch, jump);
 
         jump = false;
+        crouch = false;
     }
 }
