@@ -14,6 +14,11 @@ public class EnemyBehaviour : MonoBehaviour
     private GameObject Player;
 
     // Start is called before the first frame update
+    private void Start()
+    {
+            
+    }
+
     void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
@@ -24,8 +29,18 @@ public class EnemyBehaviour : MonoBehaviour
     {
         bool doesNoticePlayer = false;
 
-        // Check 
+        // Check
+        float dist = Vector3.Distance(Player.transform.position, transform.position);
 
+        //Can see \ hear player
+        if (dist < SightRange || (Player.isLoud && dist < LoudRange) || (Player.isSilent && dist < SilentRange))
+        {
+            doesNoticePlayer = true;
+        }
+        else
+        {
+            doesNoticePlayer = false;
+        }
 
 
         if (doesNoticePlayer)
