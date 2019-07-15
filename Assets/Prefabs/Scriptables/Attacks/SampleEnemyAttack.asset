@@ -15,5 +15,6 @@ MonoBehaviour:
   Interval: 1.5
   Damage: 1
   maxRange: 0
+  projectileSpeed: 1000
   Projectile: {fileID: 6752305550210836677, guid: 6b5a7554bbb48ba41a079cfe5f0a75b9,
     type: 3}

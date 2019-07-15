@@ -4,18 +4,15 @@ using UnityEngine;
 
 public class EnemyBehaviour : MonoBehaviour
 {
-    [SerializeField]
-    private float LoudRange;
-    [SerializeField]
-    private float SilentRange;
-    [SerializeField]
-    private float SightRange;
-    [SerializeField]
-    private AttackTemplate attack;
-    [SerializeField]
-    private AIMovement idleMovement;
-    [SerializeField]
-    private AIMovement awareMovement;
+    [SerializeField] float LoudRange;
+    [SerializeField] float SilentRange;
+    [SerializeField] float SightRange;
+    [SerializeField] AttackTemplate attack;
+    [SerializeField] Transform attackSource;
+    [SerializeField] float ReloadSpeed;
+    private float lastShot;
+    [SerializeField] AIMovement idleMovement;
+    [SerializeField] AIMovement awareMovement;
 
     private GameObject Player;
     private Collider2D collider;
@@ -40,8 +37,11 @@ public class EnemyBehaviour : MonoBehaviour
         // Check
         float dist = Vector3.Distance(Player.transform.position, transform.position);
 
-        //Can see \ hear player
-        if(dist <= SightRange)
+        //Can see \ hear player (depends of the facing (scale.x)
+        if(dist <= SightRange &&
+            ((transform.localScale.x > 0 && transform.position.x < Player.transform.position.x) ||
+            (transform.localScale.x < 0 && transform.position.x > Player.transform.position.x))
+            )
         {
             collider.enabled = false;
             RaycastHit2D hit = Physics2D.Raycast(transform.position, Player.transform.position - transform.position);
@@ -49,17 +49,17 @@ public class EnemyBehaviour : MonoBehaviour
             {
                 if (hit.collider.gameObject.Equals(Player.gameObject))
                 {
-                    Debug.Log("EnemyBehaviour::Update sees player!");
                     doesSeePlayer = true;
                 }
             }
             collider.enabled = true;
         }
 
-        if (doesSeePlayer)
+        if (doesSeePlayer && lastShot + ReloadSpeed <= Time.time)
         {
             // Attack
-            attack.PerformAttack(Player.transform.position);
+            lastShot = Time.time;
+            attack.PerformAttack(attackSource, Player.transform.position);
         }
         else if (doesHearPlayer)
         {

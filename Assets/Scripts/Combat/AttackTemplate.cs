@@ -7,7 +7,7 @@ public abstract class AttackTemplate : ScriptableObject
     public float Interval;
     public float Damage;
 
-    public virtual void PerformAttack(Vector3 target)
+    public virtual void PerformAttack(Transform source, Vector3 target)
     {
         Debug.Log("empty attack!");
     }
