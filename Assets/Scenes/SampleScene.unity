@@ -410,6 +410,7 @@ GameObject:
   - component: {fileID: 1262372569}
   - component: {fileID: 1262372573}
   - component: {fileID: 1262372574}
+  - component: {fileID: 1262372575}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -439,6 +440,7 @@ MonoBehaviour:
   m_GroundCheck: {fileID: 1824275292}
   m_CeilingCheck: {fileID: 975352745}
   m_CrouchDisableCollider: {fileID: 25656167}
+  m_Grounded: 0
   OnLandEvent:
     m_PersistentCalls:
       m_Calls: []
@@ -449,6 +451,7 @@ MonoBehaviour:
       m_Calls: []
     m_TypeName: CharacterController+BoolEvent, Assembly-CSharp, Version=0.0.0.0, Culture=neutral,
       PublicKeyToken=null
+  m_wasCrouching: 0
 --- !u!61 &1262372570
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -574,6 +577,30 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   WalkingSpeed: 5
+  MaxHealth: 3
+  respawnCheckpoint: {fileID: 0}
+  isRobotLegs: 0
+  isRobotArms: 0
+  isRobotBrain: 0
+--- !u!95 &1262372575
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1262372568}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00cc14c05c4999b48a4518e5434948fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1295985793
 GameObject:
   m_ObjectHideFlags: 0
