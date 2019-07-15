@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5c76069221a6a4643b2f5d121d956b95, type: 3}
   m_Name: SampleEnemyAttack
   m_EditorClassIdentifier: 
-  Interval: 0.59
-  Damage: 2.22
-  maxRange: 1.12
-  Projectile: {fileID: 0}
+  Interval: 1.5
+  Damage: 1
+  maxRange: 0
+  Projectile: {fileID: 6752305550210836677, guid: 6b5a7554bbb48ba41a079cfe5f0a75b9,
+    type: 3}

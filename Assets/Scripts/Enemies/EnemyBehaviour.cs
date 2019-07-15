@@ -18,7 +18,7 @@ public class EnemyBehaviour : MonoBehaviour
     private AIMovement awareMovement;
 
     private GameObject Player;
-
+    private Collider2D collider;
     // Start is called before the first frame update
     private void Start()
     {
@@ -28,6 +28,7 @@ public class EnemyBehaviour : MonoBehaviour
     void Awake()
     {
         Player = GameObject.FindGameObjectWithTag("Player");
+        collider = GetComponent<Collider2D>();
     }
 
     // Update is called once per frame
@@ -40,14 +41,20 @@ public class EnemyBehaviour : MonoBehaviour
         float dist = Vector3.Distance(Player.transform.position, transform.position);
 
         //Can see \ hear player
-        /*if (dist < SightRange || (Player.isLoud && dist < LoudRange) || (Player.isSilent && dist < SilentRange))
+        if(dist <= SightRange)
         {
-            doesNoticePlayer = true;
+            collider.enabled = false;
+            RaycastHit2D hit = Physics2D.Raycast(transform.position, Player.transform.position - transform.position);
+            if(hit.collider != null)
+            {
+                if (hit.collider.gameObject.Equals(Player.gameObject))
+                {
+                    Debug.Log("EnemyBehaviour::Update sees player!");
+                    doesSeePlayer = true;
+                }
+            }
+            collider.enabled = true;
         }
-        else
-        {
-            doesNoticePlayer = false;
-        }*/
 
         if (doesSeePlayer)
         {

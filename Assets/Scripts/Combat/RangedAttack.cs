@@ -11,5 +11,6 @@ public class RangedAttack : AttackTemplate
     public override void PerformAttack(Vector3 target)
     {
         Debug.Log("RangedAttack::PerformAttack Pew");
+
     }
 }
