@@ -1,7 +1,9 @@
-﻿using System;
+﻿using Assets.Scripts.Environment;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 [RequireComponent(typeof(CharacterController))]
 public class CharacterBehaviour : MonoBehaviour
@@ -102,5 +104,29 @@ public class CharacterBehaviour : MonoBehaviour
 
         jump = false;
         crouch = false;
+    }
+
+    private void OnCollisionEnter2D(Collision2D collision)
+    {
+        if(collision.gameObject.tag == "Environment")
+        {
+            Vector3 hitPos = Vector3.zero;
+
+            if (collision.contacts.Length > 0)
+            {
+                hitPos.x = collision.contacts[0].point.x;
+                hitPos.y = collision.contacts[0].point.y;
+
+                var tilemap = collision.gameObject.GetComponent<Tilemap>();
+                var tilePosition = tilemap.WorldToCell(hitPos);
+                var tile = tilemap.GetTile(tilePosition);
+
+                if (tile is BreakableTile)
+                {
+                    BreakableTile.Break(tilePosition, tilemap);
+                }
+            }
+
+        }
     }
 }
