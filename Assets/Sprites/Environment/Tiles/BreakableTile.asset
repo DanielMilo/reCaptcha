@@ -12,7 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: BreakableTile
   m_EditorClassIdentifier: Assembly-CSharp:Assets.Scripts.Environment:BreakableTile
-  m_Sprite: {fileID: 0}
+  m_Sprite: {fileID: 8110719193379804542, guid: 6fa0c32b133ccc441ad63a4d43435256,
+    type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_Transform:
     e00: 1
@@ -34,4 +35,3 @@ MonoBehaviour:
   m_InstancedGameObject: {fileID: 0}
   m_Flags: 1
   m_ColliderType: 1
-  isAlive: 1

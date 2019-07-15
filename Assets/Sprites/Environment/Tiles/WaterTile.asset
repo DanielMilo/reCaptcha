@@ -12,8 +12,13 @@ MonoBehaviour:
   m_Script: {fileID: 0}
   m_Name: WaterTile
   m_EditorClassIdentifier: Assembly-CSharp:Assets.Scripts.Environment:WaterTile
-  m_Sprite: {fileID: 0}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Sprite: {fileID: -7687978440320002750, guid: 6fa0c32b133ccc441ad63a4d43435256,
+    type: 3}
+  m_Color:
+    r: 0.074893214
+    g: 0.30513674
+    b: 0.9339623
+    a: 1
   m_Transform:
     e00: 1
     e01: 0

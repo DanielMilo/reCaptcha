@@ -10,7 +10,7 @@ public class Light : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        Mesh mesh = new Mesh();
+        /*Mesh mesh = new Mesh();
         Vector3[] verts = new Vector3[4]
         {
             new Vector3(1,1,0),
@@ -31,10 +31,11 @@ public class Light : MonoBehaviour
         var meshRenderer = gameObject.AddComponent(typeof(MeshRenderer)) as MeshRenderer;
 
         meshFilter.mesh = mesh;
-
+        */
         var lightMaterial = new Material(Shader.Find("Unlit/LightShader"));
-
         lightMaterial.color = color;
+
+        var meshRenderer = gameObject.GetComponent(typeof(MeshRenderer)) as MeshRenderer;
         meshRenderer.material = lightMaterial;
     }
 

@@ -8,10 +8,9 @@
     {
         Tags {
 			"Queue" = "Transparent+1000"
-			"IgnoreProjector" = "True"
+			//"IgnoreProjector" = "True"
 			"RenderType" = "Transparent"
 			"PreviewType" = "Plane"
-			"CanUseSpriteAtlas" = "True"
 		}
 
 		Cull Off
@@ -48,15 +47,14 @@
             {
                 v2f o;
                 o.vertex = UnityObjectToClipPos(v.vertex);
-                o.uv = v.vertex.xy;
+                o.uv = v.vertex.xy * 2;
                 return o;
             }
 
             fixed4 frag (v2f i) : SV_Target
             {
-				float distSquared = length(i.uv);
 				fixed4 col = _Color;
-				col.a = 1.0 - distSquared;
+				col.a = 1.0 - length(i.uv);
 
                 return col;
             }
