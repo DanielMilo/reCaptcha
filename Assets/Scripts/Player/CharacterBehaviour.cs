@@ -63,24 +63,16 @@ public class CharacterBehaviour : MonoBehaviour
         movement = Input.GetAxis("Horizontal") * WalkingSpeed;
         animator.SetFloat("Movement", movement);
 
-        if (!isRobotLegs && Input.GetAxis("Vertical") < 0 && controller.m_Grounded)
+        if (!isRobotLegs && Input.GetAxis("Vertical") < 0)
         {
             crouch = true;
         }
-        else
-        {
-            crouch = false;
-        }
 
         // Try to jump
-        if (Input.GetKey(KeyCode.Space))
+        if (Input.GetKeyDown(KeyCode.Space))
         {
             jump = true;
             animator.SetTrigger("Jump");
-        }
-        else
-        {
-            jump = false;
         }
 
         if(!controller.m_wasCrouching && Input.GetKeyDown(KeyCode.LeftControl))
@@ -94,5 +86,8 @@ public class CharacterBehaviour : MonoBehaviour
     private void FixedUpdate()
     {
         controller.Move(movement, crouch, jump);
+
+        jump = false;
+        crouch = false;
     }
 }
