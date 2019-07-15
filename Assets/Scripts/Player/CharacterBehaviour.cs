@@ -24,7 +24,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     [SerializeField] bool isRobotLegs;
     [SerializeField] bool isRobotArms;
-    [SerializeField] bool isRobotBrain;
+    [SerializeField] public bool isRobotBrain;
 
     [SerializeField] GameObject Projectile;
     [SerializeField] Transform projectileSpawn;
@@ -50,7 +50,7 @@ public class CharacterBehaviour : MonoBehaviour
         animator.SetTrigger("HitGround");
     }
 
-    void OnHit(int damage)
+    public void OnHit(int damage)
     {
         currentHealth -= damage;
 
