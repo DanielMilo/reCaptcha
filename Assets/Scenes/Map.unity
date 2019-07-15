@@ -1806,12 +1806,17 @@ PrefabInstance:
     - target: {fileID: 8359235884912231782, guid: 59641c4de8552f04492749194e23e6ba,
         type: 3}
       propertyPath: m_JumpForce
-      value: 170
+      value: 650
       objectReference: {fileID: 0}
     - target: {fileID: 8359235884912231782, guid: 59641c4de8552f04492749194e23e6ba,
         type: 3}
       propertyPath: m_MovementSmoothing
-      value: 0.02
+      value: 0.1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8359235884912231782, guid: 59641c4de8552f04492749194e23e6ba,
+        type: 3}
+      propertyPath: m_CrouchSpeed
+      value: 0.7
       objectReference: {fileID: 0}
     - target: {fileID: 8359235884912231778, guid: 59641c4de8552f04492749194e23e6ba,
         type: 3}
@@ -1822,7 +1827,7 @@ PrefabInstance:
     - target: {fileID: 8359235885524728035, guid: 59641c4de8552f04492749194e23e6ba,
         type: 3}
       propertyPath: m_LocalPosition.y
-      value: -1.4
+      value: -1.5
       objectReference: {fileID: 0}
     - target: {fileID: 8359235886775840790, guid: 59641c4de8552f04492749194e23e6ba,
         type: 3}
@@ -2036,7 +2041,7 @@ Animator:
   m_GameObject: {fileID: 1500365199}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 00cc14c05c4999b48a4518e5434948fd, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
