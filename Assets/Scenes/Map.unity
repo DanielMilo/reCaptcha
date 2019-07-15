@@ -1676,12 +1676,6 @@ TilemapCollider2D:
   m_Offset: {x: 0, y: 0}
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0.00001
---- !u!4 &238903151 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2843661417931087184, guid: 59641c4de8552f04492749194e23e6ba,
-    type: 3}
-  m_PrefabInstance: {fileID: 419173136}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &419173136
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1748,32 +1742,6 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359235884912231777, guid: 59641c4de8552f04492749194e23e6ba,
-        type: 3}
-      propertyPath: projectileSpawn
-      value: 
-      objectReference: {fileID: 238903151}
-    - target: {fileID: 8359235884912231777, guid: 59641c4de8552f04492749194e23e6ba,
-        type: 3}
-      propertyPath: Projectile
-      value: 
-      objectReference: {fileID: 6752305550210836677, guid: 6b5a7554bbb48ba41a079cfe5f0a75b9,
-        type: 3}
-    - target: {fileID: 8359235884912231777, guid: 59641c4de8552f04492749194e23e6ba,
-        type: 3}
-      propertyPath: ProjectileForce.x
-      value: 1000
-      objectReference: {fileID: 0}
-    - target: {fileID: 8359235884912231777, guid: 59641c4de8552f04492749194e23e6ba,
-        type: 3}
-      propertyPath: ProjectileForce.y
-      value: 200
-      objectReference: {fileID: 0}
-    - target: {fileID: 2843661417931087184, guid: 59641c4de8552f04492749194e23e6ba,
-        type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 1.222
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 59641c4de8552f04492749194e23e6ba, type: 3}
