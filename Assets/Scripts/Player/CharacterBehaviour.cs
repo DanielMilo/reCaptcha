@@ -24,6 +24,9 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField] bool isRobotArms;
     [SerializeField] bool isRobotBrain;
 
+    [SerializeField] GameObject Projectile;
+    [SerializeField] Transform projectileSpawn;
+    [SerializeField] Vector2 ProjectileForce;
     private Animator animator;
 
     // Start is called before the first frame update
@@ -78,6 +81,16 @@ public class CharacterBehaviour : MonoBehaviour
         if(!controller.m_wasCrouching && Input.GetKeyDown(KeyCode.LeftControl))
         {
             animator.SetTrigger("Attack");
+
+            if (isRobotArms)
+            {
+                // melee
+            }
+            else
+            {
+                GameObject newProjectile = Instantiate(Projectile, projectileSpawn.position, Quaternion.identity);
+                newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x,1));
+            }
         }
 
         animator.SetBool("IsRobotHand", isRobotArms);
