@@ -31,6 +31,9 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField] Vector2 ProjectileForce;
     private Animator animator;
 
+    [SerializeField] float ReloadTime;
+    private float lastShot;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -80,7 +83,7 @@ public class CharacterBehaviour : MonoBehaviour
             animator.SetTrigger("Jump");
         }
 
-        if(!controller.m_wasCrouching && Input.GetKeyDown(KeyCode.LeftControl))
+        if(!controller.m_wasCrouching && Input.GetKey(KeyCode.LeftControl))
         {
             animator.SetTrigger("Attack");
 
@@ -88,10 +91,11 @@ public class CharacterBehaviour : MonoBehaviour
             {
                 // melee
             }
-            else
+            else if(lastShot + ReloadTime <= Time.time)
             {
                 GameObject newProjectile = Instantiate(Projectile, projectileSpawn.position, Quaternion.identity);
                 newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x,1));
+                lastShot = Time.time;
             }
         }
 
