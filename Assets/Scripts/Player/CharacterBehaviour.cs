@@ -70,6 +70,20 @@ public class CharacterBehaviour : MonoBehaviour
     void Update()
     {
         movement = Input.GetAxis("Horizontal") * WalkingSpeed;
+
+        if(movement != 0)
+        {
+            var walkingAudio = this.GetComponents<AudioSource>()[0];
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+        }
+        else
+        {
+            this.GetComponents<AudioSource>()[0].Stop();
+        }
+
         animator.SetFloat("Movement", movement);
 
         if (!isRobotLegs && Input.GetAxis("Vertical") < 0)
@@ -82,6 +96,7 @@ public class CharacterBehaviour : MonoBehaviour
         {
             jump = true;
             animator.SetTrigger("Jump");
+            this.GetComponents<AudioSource>()[1].Play();
         }
 
         if(Input.GetKeyDown(KeyCode.Alpha1))
@@ -111,6 +126,8 @@ public class CharacterBehaviour : MonoBehaviour
                 newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x * -1,1));
                 lastShot = Time.time;
             }
+
+            this.GetComponents<AudioSource>()[2].Play();
         }
 
         animator.SetBool("IsRobotHand", isRobotArms);
