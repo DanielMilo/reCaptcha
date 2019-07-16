@@ -81,7 +81,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 250
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -165,12 +165,12 @@ TextureImporter:
       name: character sheet2_2
       rect:
         serializedVersion: 2
-        x: 109
-        y: 539
-        width: 113
-        height: 212
+        x: 100.80812
+        y: 529.44275
+        width: 125.970474
+        height: 224.97052
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.51354796, y: 0.51365507}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -207,12 +207,12 @@ TextureImporter:
       name: character sheet2_4
       rect:
         serializedVersion: 2
-        x: 790
-        y: 328
-        width: 120
-        height: 309
+        x: 786.37836
+        y: 325.82697
+        width: 127.24335
+        height: 312.6217
       alignment: 9
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0.49999976, y: 0.50115854}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -333,12 +333,12 @@ TextureImporter:
       name: character sheet2_10
       rect:
         serializedVersion: 2
-        x: 1224
-        y: 184
-        width: 133
-        height: 188
+        x: 1150.6179
+        y: 234.73264
+        width: 206.38208
+        height: 87.66101
       alignment: 9
-      pivot: {x: 0.518797, y: 0.49999997}
+      pivot: {x: 0.6898955, y: 0.49357593}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -354,12 +354,12 @@ TextureImporter:
       name: character sheet2_11
       rect:
         serializedVersion: 2
-        x: 991
-        y: 123
-        width: 197
-        height: 75
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        x: 985.99994
+        y: 118
+        width: 207.00006
+        height: 85
+      alignment: 9
+      pivot: {x: 0.5000001, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       outline: []
       physicsShape: []
@@ -384,6 +384,6 @@ TextureImporter:
   spritePackingTag: 
   pSDRemoveMatte: 0
   pSDShowRemoveMatteOption: 0
-  userData: 636987997983413127
+  userData: 636988111694904054
   assetBundleName: 
   assetBundleVariant: 

@@ -20,7 +20,7 @@ public class CharacterBehaviour : MonoBehaviour
 
     [SerializeField] int MaxHealth = 3;
     private int currentHealth = 3;
-    [SerializeField] Transform respawnCheckpoint;
+    public Transform respawnCheckpoint;
 
     [SerializeField] bool isRobotLegs;
     [SerializeField] bool isRobotArms;
@@ -41,6 +41,7 @@ public class CharacterBehaviour : MonoBehaviour
         animator = GetComponent<Animator>();
 
         controller.OnCrouchEvent.AddListener(OnCrouch);
+        controller.OnLandEvent.AddListener(OnLand);
     }
 
     void OnCrouch(bool newCrouchState)
