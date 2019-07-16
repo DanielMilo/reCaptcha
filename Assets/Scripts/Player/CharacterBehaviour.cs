@@ -95,7 +95,7 @@ public class CharacterBehaviour : MonoBehaviour
             else if(lastShot + ReloadTime <= Time.time)
             {
                 GameObject newProjectile = Instantiate(Projectile, projectileSpawn.position, Quaternion.identity);
-                newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x,1));
+                newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x * -1,1));
                 lastShot = Time.time;
             }
         }
