@@ -57,8 +57,8 @@ public class EnemyBehaviour : MonoBehaviour
 
             //Can see \ hear player (depends of the facing (scale.x)
             if (dist <= SightRange &&
-                ((transform.localScale.x > 0 && transform.position.x < Player.transform.position.x) ||
-                (transform.localScale.x < 0 && transform.position.x > Player.transform.position.x))
+                ((transform.localScale.x < 0 && transform.position.x < Player.transform.position.x) ||
+                (transform.localScale.x > 0 && transform.position.x > Player.transform.position.x))
                 )
             {
                 collider.enabled = false;
