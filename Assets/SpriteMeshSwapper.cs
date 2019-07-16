@@ -52,6 +52,47 @@ public class SpriteMeshSwapper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if (!character.isRobotLegs)
+        {
+            smifleg.spriteMesh =  pfleg;
+            smifboot.spriteMesh = pfboot;
+            smibleg.spriteMesh =  pbleg;
+            smibboot.spriteMesh = pbboot;
+        }
+        else
+        {
+            smifleg.spriteMesh =  rfleg;
+            smifboot.spriteMesh = rfboot;
+            smibleg.spriteMesh =  rbleg;
+            smibboot.spriteMesh = rbboot;
+        }
+
+        if (!character.isRobotArms)
+        {
+            smifarm.spriteMesh =  pfarm;
+            smifhand.spriteMesh = pfhand;
+            smibarm.spriteMesh =  pbarm;
+            smiband.spriteMesh = pband;
+        }
+        else
+        {
+            smifarm.spriteMesh =  rfarm;
+            smifhand.spriteMesh = rfhand;
+            smibarm.spriteMesh =  rbarm;
+            smiband.spriteMesh = rband;
+        }
+
+        if (!character.isRobotBrain)
+        {
+            smihead.spriteMesh = phead;
+            smichest.spriteMesh = pchest;
+            smitorso.spriteMesh = ptorso;
+        }
+        else
+        {
+            smihead.spriteMesh = rhead;
+            smichest.spriteMesh = rchest;
+            smitorso.spriteMesh = rtorso;
+        }
     }
 }

@@ -23,8 +23,10 @@ public class CharacterBehaviour : MonoBehaviour
     public Transform respawnCheckpoint;
 
     [SerializeField] public bool isRobotLegs;
-    [SerializeField] bool isRobotArms;
+    [SerializeField] public bool isRobotArms;
     [SerializeField] public bool isRobotBrain;
+
+    public bool isCutscene = false;
 
     [SerializeField] GameObject Projectile;
     [SerializeField] Transform projectileSpawn;
@@ -69,47 +71,51 @@ public class CharacterBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        movement = Input.GetAxis("Horizontal") * WalkingSpeed;
-        animator.SetFloat("Movement", movement);
+        movement = 0;
+        if (!isCutscene)
+        {
+            movement = Input.GetAxis("Horizontal") * WalkingSpeed;
+            animator.SetFloat("Movement", movement);
 
-        if (!isRobotLegs && Input.GetAxis("Vertical") < 0)
-        {
-            crouch = true;
-        }
-
-        // Try to jump
-        if (Input.GetKeyDown(KeyCode.Space))
-        {
-            jump = true;
-            animator.SetTrigger("Jump");
-        }
-
-        if(Input.GetKeyDown(KeyCode.Alpha1))
-        {
-            isRobotLegs = !isRobotLegs;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha2))
-        {
-            isRobotArms = !isRobotArms;
-        }
-        if (Input.GetKeyDown(KeyCode.Alpha3))
-        {
-            isRobotBrain = !isRobotBrain;
-        }
-
-        if (!controller.m_wasCrouching && Input.GetKey(KeyCode.LeftControl))
-        {
-            animator.SetTrigger("Attack");
-
-            if (isRobotArms)
+            if (!isRobotLegs && Input.GetAxis("Vertical") < 0)
             {
-                // melee
+                crouch = true;
             }
-            else if(lastShot + ReloadTime <= Time.time)
+
+            // Try to jump
+            if (Input.GetKeyDown(KeyCode.Space))
             {
-                GameObject newProjectile = Instantiate(Projectile, projectileSpawn.position, Quaternion.identity);
-                newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x * -1,1));
-                lastShot = Time.time;
+                jump = true;
+                animator.SetTrigger("Jump");
+            }
+
+            if (Input.GetKeyDown(KeyCode.Alpha1))
+            {
+                isRobotLegs = !isRobotLegs;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha2))
+            {
+                isRobotArms = !isRobotArms;
+            }
+            if (Input.GetKeyDown(KeyCode.Alpha3))
+            {
+                isRobotBrain = !isRobotBrain;
+            }
+
+            if (!controller.m_wasCrouching && Input.GetKey(KeyCode.LeftControl))
+            {
+                animator.SetTrigger("Attack");
+
+                if (isRobotArms)
+                {
+                    // melee
+                }
+                else if (lastShot + ReloadTime <= Time.time)
+                {
+                    GameObject newProjectile = Instantiate(Projectile, projectileSpawn.position, Quaternion.identity);
+                    newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x * -1, 1));
+                    lastShot = Time.time;
+                }
             }
         }
 
