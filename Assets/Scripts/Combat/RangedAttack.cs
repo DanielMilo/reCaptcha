@@ -11,7 +11,9 @@ public class RangedAttack : AttackTemplate
 
     public override void PerformAttack(Transform source, Vector3 target)
     {
-        Debug.Log("RangedAttack::PerformAttack Pew");
+        Debug.DrawLine(source.position, target, new Color(200, 0, 200), 0.6f);
+        Debug.Log("RangedAttack::PerformAttack Drawing Ray");
+
         GameObject newProjectile = Instantiate(Projectile, source.position, source.rotation);
         newProjectile.GetComponent<Rigidbody2D>().AddForce((target - source.position).normalized * projectileSpeed);
     }
