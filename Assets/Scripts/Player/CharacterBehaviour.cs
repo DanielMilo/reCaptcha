@@ -22,7 +22,7 @@ public class CharacterBehaviour : MonoBehaviour
     private int currentHealth = 3;
     public Transform respawnCheckpoint;
 
-    [SerializeField] bool isRobotLegs;
+    [SerializeField] public bool isRobotLegs;
     [SerializeField] bool isRobotArms;
     [SerializeField] public bool isRobotBrain;
 
@@ -84,7 +84,20 @@ public class CharacterBehaviour : MonoBehaviour
             animator.SetTrigger("Jump");
         }
 
-        if(!controller.m_wasCrouching && Input.GetKey(KeyCode.LeftControl))
+        if(Input.GetKeyDown(KeyCode.Alpha1))
+        {
+            isRobotLegs = !isRobotLegs;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha2))
+        {
+            isRobotArms = !isRobotArms;
+        }
+        if (Input.GetKeyDown(KeyCode.Alpha3))
+        {
+            isRobotBrain = !isRobotBrain;
+        }
+
+        if (!controller.m_wasCrouching && Input.GetKey(KeyCode.LeftControl))
         {
             animator.SetTrigger("Attack");
 
