@@ -45,6 +45,7 @@ public class EnemyBehaviour : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        
         bool doesSeePlayer = false;
         bool doesHearPlayer = false;
 
