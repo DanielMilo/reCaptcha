@@ -36,6 +36,10 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField] float ReloadTime;
     private float lastShot;
 
+    [SerializeField] BoxCollider2D boxCollider;
+
+    [SerializeField] int robotDamage = 1;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -123,7 +127,19 @@ public class CharacterBehaviour : MonoBehaviour
 
                 if (isRobotArms)
                 {
-                    // melee
+                    var bounds = boxCollider.bounds;
+                    var minPos = new Vector2(bounds.min.x, bounds.min.y);
+                    var maxPos = new Vector2(bounds.max.x, bounds.max.y);
+
+                    var colliders = Physics2D.OverlapBoxAll(bounds.center, bounds.size, 0.0f);
+                    foreach(var collider in colliders)
+                    {
+                        var health = collider.GetComponent<Health>();
+                        if(health)
+                        {
+                            health.TakeDamage(robotDamage);
+                        }
+                    }
                 }
                 else if (lastShot + ReloadTime <= Time.time)
                 {
