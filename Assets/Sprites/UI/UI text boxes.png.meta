@@ -1,0 +1,485 @@
+fileFormatVersion: 2
+guid: 933b1c64d5b76dd4f9924877fc12fb2f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4974072904990716481
+    second: UI text boxes_0
+  - first:
+      213: -2665768492254663497
+    second: UI text boxes_1
+  - first:
+      213: -6495877813969910874
+    second: UI text boxes_2
+  - first:
+      213: -6264852313747859878
+    second: UI text boxes_3
+  - first:
+      213: -8176642272030464758
+    second: UI text boxes_4
+  - first:
+      213: -6712957957782690444
+    second: UI text boxes_5
+  - first:
+      213: 15808912515096385
+    second: UI text boxes_6
+  - first:
+      213: 8737678357893109122
+    second: UI text boxes_7
+  - first:
+      213: -3893137995811844943
+    second: UI text boxes_8
+  - first:
+      213: -4268263184225230007
+    second: UI text boxes_9
+  - first:
+      213: 1114264189736183943
+    second: UI text boxes_10
+  - first:
+      213: 4132085358110187375
+    second: UI text boxes_11
+  - first:
+      213: -7390597240454191740
+    second: UI text boxes_12
+  - first:
+      213: -3634467370268089842
+    second: UI text boxes_13
+  - first:
+      213: 1525147407856841637
+    second: UI text boxes_14
+  - first:
+      213: -6294019109682639572
+    second: UI text boxes_15
+  externalObjects: {}
+  serializedVersion: 10
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: -1
+    aniso: -1
+    mipBias: -100
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  platformSettings:
+  - serializedVersion: 2
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  - serializedVersion: 2
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: UI text boxes_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1578
+        width: 1035
+        height: 204
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3cee542d9e15fa940bf053e7bc083751
+      internalID: -4974072904990716481
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_1
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1579
+        width: 1033
+        height: 203
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: be322a0f578df7f4ea97037f05772a14
+      internalID: -2665768492254663497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_2
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1334
+        width: 1035
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8b81fb011049f5e4bbe4609a5562da11
+      internalID: -6495877813969910874
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_3
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 1336
+        width: 1033
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: aee000dd3c7460c48bcdc74ae6b1d248
+      internalID: -6264852313747859878
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_4
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 1090
+        width: 1035
+        height: 216
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a0b7307584d3734eaf79b1670372f01
+      internalID: -8176642272030464758
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_5
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 1091
+        width: 1034
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fe04a27bd42e3344fa978cd490a0f430
+      internalID: -6712957957782690444
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 846
+        width: 1035
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 53addde67ef855548906f6e013df196a
+      internalID: 15808912515096385
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_7
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 847
+        width: 1034
+        height: 212
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ac62fa7f1054dfe40b08fba3745f96aa
+      internalID: 8737678357893109122
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_8
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 364
+        width: 1035
+        height: 205
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: cf169d486e19b5942aedfca22a6e9108
+      internalID: -3893137995811844943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_9
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 602
+        width: 1035
+        height: 213
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0a707cbd3617e1d4ebd12cf454828a10
+      internalID: -4268263184225230007
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_10
+      rect:
+        serializedVersion: 2
+        x: 1214
+        y: 261
+        width: 187
+        height: 210
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 05f1d91f13ea4ce499a70dd0db274484
+      internalID: 1114264189736183943
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_11
+      rect:
+        serializedVersion: 2
+        x: 1259
+        y: 365
+        width: 1034
+        height: 450
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 5d85b651a0814d341a4cbb521861434c
+      internalID: 4132085358110187375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_12
+      rect:
+        serializedVersion: 2
+        x: 1606
+        y: 258
+        width: 87
+        height: 264
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 33ba3c7aa7effc24a9350b0341a406de
+      internalID: -7390597240454191740
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_13
+      rect:
+        serializedVersion: 2
+        x: 1840
+        y: 226
+        width: 250
+        height: 239
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2efba7b546a7075439ae145a6523563f
+      internalID: -3634467370268089842
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_14
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 0
+        width: 1403
+        height: 167
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 232e368366b4984409ecb17d419f5911
+      internalID: 1525147407856841637
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: UI text boxes_15
+      rect:
+        serializedVersion: 2
+        x: 1260
+        y: 0
+        width: 1033
+        height: 194
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2865000823217e34db2ec62a6212c82c
+      internalID: -6294019109682639572
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 0b7a5b1071a47d443b58ab79748cee5f
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
