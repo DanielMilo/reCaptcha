@@ -36,7 +36,7 @@ public class CharacterBehaviour : MonoBehaviour
     [SerializeField] float ReloadTime;
     private float lastShot;
 
-    [SerializeField] BoxCollider2D boxCollider;
+    [SerializeField] BoxCollider2D punchBox;
 
     [SerializeField] int robotDamage = 1;
 
@@ -48,11 +48,23 @@ public class CharacterBehaviour : MonoBehaviour
 
         controller.OnCrouchEvent.AddListener(OnCrouch);
         controller.OnLandEvent.AddListener(OnLand);
+
+        punchBox.gameObject.SetActive(false);
     }
 
     void OnCrouch(bool newCrouchState)
     {
         animator.SetBool("Crouching", newCrouchState);
+
+        // Set step sound pitch
+        if (newCrouchState)
+        {
+            GetComponents<AudioSource>()[0].pitch = 1.3f;
+        }
+        else
+        {
+            GetComponents<AudioSource>()[0].pitch = 2f;
+        }
     }
 
     void OnLand()
@@ -79,25 +91,15 @@ public class CharacterBehaviour : MonoBehaviour
         if (!isCutscene)
         {
             movement = Input.GetAxis("Horizontal") * WalkingSpeed;
-
-            if (movement != 0)
-            {
-                var walkingAudio = this.GetComponents<AudioSource>()[0];
-                if (!walkingAudio.isPlaying)
-                {
-                    walkingAudio.Play();
-                }
-                else
-                {
-                    this.GetComponents<AudioSource>()[0].Stop();
-                }
-            }
-            animator.SetFloat("Movement", movement);
-
+            
 
             if (!isRobotLegs && Input.GetAxis("Vertical") < 0)
             {
                 crouch = true;
+            }
+            else
+            {
+                crouch = false;
             }
 
             // Try to jump
@@ -127,7 +129,9 @@ public class CharacterBehaviour : MonoBehaviour
 
                 if (isRobotArms)
                 {
-                    var bounds = boxCollider.bounds;
+
+                    punchBox.gameObject.SetActive(true);
+                    var bounds = punchBox.bounds;
                     var minPos = new Vector2(bounds.min.x, bounds.min.y);
                     var maxPos = new Vector2(bounds.max.x, bounds.max.y);
 
@@ -140,18 +144,33 @@ public class CharacterBehaviour : MonoBehaviour
                             health.TakeDamage(robotDamage);
                         }
                     }
+                    punchBox.gameObject.SetActive(false);
                 }
                 else if (lastShot + ReloadTime <= Time.time)
                 {
+                    
                     GameObject newProjectile = Instantiate(Projectile, projectileSpawn.position, Quaternion.identity);
                     newProjectile.GetComponent<Rigidbody2D>().AddForce(ProjectileForce * new Vector2(transform.localScale.x * -1, 1));
                     lastShot = Time.time;
                     this.GetComponents<AudioSource>()[2].Play();
                 }
-
-                
             }            
         }
+
+        // Walking audio
+        if (movement != 0 && controller.m_Grounded)
+        {
+            var walkingAudio = this.GetComponents<AudioSource>()[0];
+            if (!walkingAudio.isPlaying)
+            {
+                walkingAudio.Play();
+            }
+        }
+        else
+        {
+            GetComponents<AudioSource>()[0].Stop();
+        }
+        animator.SetFloat("Movement", movement);
 
         animator.SetBool("IsRobotHand", isRobotArms);
     }
@@ -161,7 +180,6 @@ public class CharacterBehaviour : MonoBehaviour
         controller.Move(movement, crouch, jump);
 
         jump = false;
-        crouch = false;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

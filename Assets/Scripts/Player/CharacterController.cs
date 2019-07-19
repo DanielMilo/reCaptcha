@@ -70,9 +70,9 @@ public class CharacterController : MonoBehaviour
         if (!crouch)
         {
             // If the character has a ceiling preventing them from standing up, keep them crouching
-            if (Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround))
+            Collider2D overheadCollider = Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround);
+            if(overheadCollider != null && overheadCollider.tag != "Trigger")
             {
-                Debug.Log(Physics2D.OverlapCircle(m_CeilingCheck.position, k_CeilingRadius, m_WhatIsGround).ToString());
                 crouch = true;
             }
         }
